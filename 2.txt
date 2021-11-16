@@ -1,0 +1,53 @@
+Sample Questions Set 2
+
+Q1. Why would you need Active Directory service in your Azure deployment? What service does AWS IAM provides? (2 points)
+
+Because Active Directory service lets you run Microsoft Active Directory(AD) as a managed service,  which can reduce management tasks, 
+thereby allowing you to focus more of your time and resources on your business.
+
+AWS IAM allows you to create separate usernames and passwords for individual users or resources and delegate access.
+
+Q2. Explain how serverless computing can help organizations to cut cost in cloud deployments. Give an example of serverless computing 
+service you have used in a public cloud environment. (3)
+
+Serverless computing provides the ability to purchase only the CPU cycles and memory needed to support an application using an event-based 
+pay-per-use model. This allows teams to sidestep much of the cost and time associated with managing hardware, platforms, and operating systems
+ on-premises, while also gaining the flexibility to scale rapidly and efficiently.
+
+Example: AWS Lambda, Microsoft Azure Functions, Google Cloud Functions, Amazon S3
+
+Q3. “Cloud services more economical compared to traditional network infrastructures”. Provide two example scenarios when: (2)
+i)	The above statement is true
+
+Cloud service provides more storage space, but traditional network infrastructures provide less storage, if you run out of storage or processing
+ power, then the only solution is to purchase or rent another server
+Cloud service is ability to access data anywhere at any time by user, but for traditional network infrastructure, user can access data only on
+ system in which data is stored.
+
+ii)	The above statement if false
+
+Cloud service requires fast, reliable and stable internet connection to access information anywhere at any time. For traditional network 
+infrastructure, it does not require any internet connection to access data or information.  
+
+Q4. You have setup your cloud infrastructure in such a way that  (3)
+a.	the webserver server is in a public subnet where public IP is available,
+b.	the applications are on a private subnet having only private IP,
+c.	customers can connect to the application through the webserver and receive response.
+d.	However, the applications cannot initiate any connections to outside (e.g. to fetch system updates)
+
+What service you need to install/enable in order to make sure the applications can update themselves?
+NET gateway
+Would you put that in the public or private subnet?
+
+
+
+Q5. Please explain what the following command will do.  In particular briefly mention the roles the options -v -d and -p are doing. (3)
+
+docker run -d -v my-data-volume:/data --name my-redis-container -p 6379:6379 redis
+
+-d: run container in background and print container ID
+-v: bind mount a volume
+--name: assign a name to the container
+-p: publish a container’s port to the host
+
+Run the container(redis) with port 6379 and mounts the volume into the container.
