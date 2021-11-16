@@ -1,0 +1,50 @@
+Sample Questions Set 1
+
+Q1. Run the following command on your Linux VM and answer the following questions:  (4 points)
+
+sudo docker run -it -d ubuntu bin/bash
+
+i)	Run the above command with -i option and explain what happens.
+
+	Keep STDIN open even if not attached, can still type command
+
+ii)	Run the above command with -t option and explain what happens.
+
+	Allocate a pseudo-TTY
+
+iii)	Run the above command with -d option and explain what happens.
+
+	Run the container in the background, need go inside to type command
+
+iv)	Run the above command with /bin/bash option and explain what happens.
+	
+	Launch the interactive mode 
+
+
+
+Q2. What are the differences between docker start and docker exec?  (1 point)
+
+docker exec executes a command on a running container. 
+docker start creates a temporary container, executes the command in it and stops the container when it is done.
+
+Q3. What happens when you execute run nginx container with -p 8080:80 option? (1 point)
+
+Links to the container’s port(80) with the host port(8080)
+
+Q4. What can you do with docker attach? (1)
+docker attach <ContainerName> 
+Use docker attach to attach your terminal's standard input, output, and error (or any combination of the three) to a 
+running container using the container's ID or name. This allows you to view its ongoing output or to control it interactively, 
+as though the commands were running directly in your terminal
+
+Attach local standard input, output, and error streams to a running container
+
+Q5. How can you ssh into a docker container? (2)
+Step1: installing and enabling the SSH service
+Step 2: Get IP Address of Container
+sudo docker inspect -f "{{ .NetworkSettings.IPAddress }}" container_name
+Step 3: SSH Into Docker Container
+Ping the IP address to make sure it’s available
+Example: ping –c 3 172.17.0.2
+Use the SSH tool to connect to the image:
+Example: ssh root@172.17.0.2s
