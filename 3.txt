@@ -30,3 +30,43 @@ Get-Process
 vi)	to show all the network related processes 
 
 Get-NetTCPConnection -State Established
+
+Q3.  List the latest twenty error messages from the system event log. Only return the messages – no further columns.
+
+
+
+Get-EventLog -LogName System -EntryType Error -Newest 20
+
+Q4.  Show only the stopped services
+
+
+
+(Get-Service | Where-Object Status -eq "Stopped").Count
+
+Q5.  Write a script that will show the free space on different drives.
+
+
+
+Get-Volume
+
+Q6.  Find all pdf files created on September 2021 on your Desktop folder.
+
+
+
+
+
+Q7.  Use powershell to create a folder. Use loop to create 20 files with the names file1, file2….file20 and 20 directories with name dir1, dir2, …dir20 inside the folder you created for
+
+
+
+Function FileFolderLoop {
+
+            For ($folder=0; $folder -le 20; $folder++)
+
+            {
+
+                     New-item -ItemType Directory -Path “C:\Exam”
+
+            }
+
+}
