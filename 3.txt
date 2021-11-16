@@ -1,0 +1,32 @@
+Sample Questions Set 3
+
+Q1. What are the difference between a process and a service? (2 points)
+
+A process is an instance of a particular executable (.exe program file) running.
+
+A service is a process which runs in the background and does not interact with the desktop.
+
+Q2. Write PowerShell cmdlet/script (2 points each)
+i)	to count the number of running processes. 
+
+(Get-Service | Where-Object Status -eq "Running").Count
+
+ii)	to create a file name angel.txt on c drive
+
+New-Item –Path “C:\” -Nam “angel.txt” -ItemType File
+
+iii)	to show the last 20 log entries from system log
+
+Get-EventLog -LogName System –Newest 20
+
+iv)	to show the free space on different drives
+
+Get-CimInstance -ClassName Win32_LogicalDisk | Select-Object -Property DeviceID,FreeSpace
+
+v)	to show the total virtual memory used by all processes
+
+Get-Process
+
+vi)	to show all the network related processes 
+
+Get-NetTCPConnection -State Established
